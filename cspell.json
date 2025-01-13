@@ -1,0 +1,31 @@
+// https://cspell.org/
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "version": "0.2",
+    "language": "en",
+    "flagWords": [
+        // List of words to be always considered incorrect
+        "hte" // should be "the"
+    ],
+    "ignorePaths": [
+        "cspell.json",
+        ".venv/**"
+    ],
+    "dictionaryDefinitions": [
+        {
+            "name": "project",
+            "path": ".cspell/project.txt",
+            "addWords": true,
+        },
+        {
+            "name": "python",
+            "path": ".cspell/python.txt",
+            "addWords": true,
+        }
+    ],
+    "dictionaries": [
+        "python",
+        "project",
+    ],
+    "useGitignore": true
+}
