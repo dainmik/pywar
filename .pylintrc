@@ -1,0 +1,46 @@
+# https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html
+
+[MAIN]
+
+disable=
+        # Doesn't make sense for every class, function, or module to have a docstring.
+        missing-class-docstring,
+        missing-function-docstring,
+        missing-module-docstring,
+        # Handled by ruff.
+        protected-access,
+        # Handled by ruff
+        ungrouped-imports,
+        # Handled by ruff
+        unused-argument,
+        # Handled by ruff
+        unused-import,
+        # Handled by ruff
+        unused-variable,
+        # Overriding an abstract variadic method is semantically correct and should not be complained about. Pylance handles fixed-arity cases correctly.
+        arguments-differ,
+        # handled by pylance
+        import-error,
+        # Pylance complains when the function has a docstring and a declared return type (Error: ...return type must return value on all code paths "None" is not assignable to...)
+        unnecessary-ellipsis,
+
+# Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
+# number of processors available to use, and will cap the count on Windows to
+# avoid hangs.
+jobs=0
+
+load-plugins=pylint_pytest
+
+
+[BASIC]
+
+# Good variable names which should always be accepted, separated by a comma.
+good-names=i,
+           j,
+           k,
+           _
+
+
+[VARIABLES]
+
+allow-global-unused-variables=no

@@ -1,0 +1,21 @@
+[project]
+name = "pywar"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Dainius Mikalajūnas", email = "dainius@mklns.com" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+pywar = "pywar:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+cache-dir = "./.uv_cache"
+
+[dependency-groups]
+dev = ["pylint>=3.3.3", "pylint-pytest>=1.1.8"]

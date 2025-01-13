@@ -1,0 +1,30 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.removeUnusedImports": "always",
+        "source.organizeImports": "always"
+    },
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "pylint.path": [
+        "python",
+        "-m",
+        "pylint",
+        "--rcfile",
+        ".pylintrc",
+    ],
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.typeEvaluation.strictListInference": true,
+    "python.analysis.typeEvaluation.strictDictionaryInference": true,
+    "python.analysis.typeEvaluation.strictSetInference": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportPrivateUsage": "none", // Handled by ruff
+        "reportMissingParameterType": "none", // We enjoy type inference. This setting does not silence cases where the type is Unknown, which we do not want to be silenced.
+        "reportMissingTypeStubs": "none",
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+    },
+}
