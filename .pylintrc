@@ -31,6 +31,8 @@ jobs=0
 
 load-plugins=pylint_pytest
 
+max-line-length=120
+
 
 [BASIC]
 
