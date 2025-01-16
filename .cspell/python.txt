@@ -1,2 +1,6 @@
+dataclass
+dataclasses
+pylance
+pylint
 pytest
 venv
