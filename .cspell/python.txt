@@ -3,4 +3,5 @@ dataclasses
 pylance
 pylint
 pytest
+repr
 venv
