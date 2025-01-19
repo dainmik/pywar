@@ -1,5 +1,5 @@
+from dataclasses import dataclass
 from enum import Enum, auto
-from typing import Final
 
 
 class Suit(Enum):
@@ -29,35 +29,11 @@ class Rank(Enum):
     ACE = auto()
 
 
+@dataclass(frozen=True)
 class Card:
-    def __init__(self, rank: Rank, suit: Suit) -> None:
-        self.rank: Final = rank
-        self.suit: Final = suit
+    rank: Rank
+    suit: Suit
 
-    def __lt__(self, other: object) -> bool:
-        if not isinstance(other, Card):
-            return NotImplemented
-        return self.rank.value < other.rank.value
-
-    def __le__(self, other: object) -> bool:
-        if not isinstance(other, Card):
-            return NotImplemented
-        return self.rank.value <= other.rank.value
-
-    def __eq__(self, other: object) -> bool:
-        if not isinstance(other, Card):
-            return NotImplemented
-        return self.rank == other.rank
-
-    def __ge__(self, other: object) -> bool:
-        if not isinstance(other, Card):
-            return NotImplemented
-        return self.rank.value >= other.rank.value
-
-    def __gt__(self, other: object) -> bool:
-        if not isinstance(other, Card):
-            return NotImplemented
-        return self.rank.value > other.rank.value
-
-    def __repr__(self) -> str:
-        return f"{type(self).__name__}(rank={self.rank}, suit={self.suit})"
+    @property
+    def value(self):
+        return self.rank.value

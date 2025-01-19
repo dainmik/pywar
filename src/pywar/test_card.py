@@ -11,155 +11,48 @@ def test_there_should_be_thirteen_card_ranks():
     assert len(Rank) == 13
 
 
-@pytest.mark.parametrize(
-    "rank",
-    [
-        *Rank,
-    ],
-)
-@pytest.mark.parametrize(
-    "suit",
-    [
-        *Suit,
-    ],
-)
-def test_card_can_be_instantiated_with_correct_rank_and_suite(rank: Rank, suit: Suit):
-    card = Card(rank, suit)
+def test_card_can_be_instantiated_with_correct_rank_and_suite():
+    card = Card(Rank.ACE, Suit.DIAMONDS)
 
-    assert card.rank == rank
-    assert card.suit == suit
+    assert card.rank == Rank.ACE
+    assert card.suit == Suit.DIAMONDS
 
 
 @pytest.mark.parametrize(
-    "first_card, second_card, expected",
+    "first_card, second_card",
     [
-        (
-            Card(Rank.TWO, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            True,
+        pytest.param(
+            Card(Rank.EIGHT, Suit.HEARTS),
+            Card(Rank.EIGHT, Suit.HEARTS),
+            id="Both card values should be equal when their ranks and suits are the same",
         ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.TWO, Suit.CLUBS),
-            False,
+        pytest.param(
+            Card(Rank.EIGHT, Suit.DIAMONDS),
+            Card(Rank.EIGHT, Suit.HEARTS),
+            id="Both card values should be equal when their ranks are the same but suits are different",
         ),
     ],
 )
-def test_card_less_than_operator_returns_correct_result(
-    first_card: Card,
-    second_card: Card,
-    expected: bool,
+def test_card_value_should_be_equal(first_card: Card, second_card: Card):
+    assert first_card.value == second_card.value
+
+
+@pytest.mark.parametrize(
+    "first_card, second_card",
+    [
+        pytest.param(
+            Card(Rank.NINE, Suit.HEARTS),
+            Card(Rank.EIGHT, Suit.HEARTS),
+            id="First card value should be greater when its rank is greater and the suits are the same",
+        ),
+        pytest.param(
+            Card(Rank.NINE, Suit.DIAMONDS),
+            Card(Rank.EIGHT, Suit.HEARTS),
+            id="First card value should be greater when its rank is greater and the suits are different",
+        ),
+    ],
+)
+def test_first_card_value_should_be_greater_than_second_card_value(
+    first_card: Card, second_card: Card
 ):
-    assert (first_card < second_card) == expected
-
-
-@pytest.mark.parametrize(
-    "first_card, second_card, expected",
-    [
-        (
-            Card(Rank.TWO, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            True,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.TWO, Suit.CLUBS),
-            False,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            True,
-        ),
-    ],
-)
-def test_card_less_equal_operator_returns_correct_result(
-    first_card: Card,
-    second_card: Card,
-    expected: bool,
-):
-    assert (first_card <= second_card) == expected
-
-
-@pytest.mark.parametrize(
-    "first_card, second_card, expected",
-    [
-        (
-            Card(Rank.TWO, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            False,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.TWO, Suit.CLUBS),
-            False,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            True,
-        ),
-    ],
-)
-def test_card_equal_operator_returns_correct_result(
-    first_card: Card,
-    second_card: Card,
-    expected: bool,
-):
-    assert (first_card == second_card) == expected
-
-
-@pytest.mark.parametrize(
-    "first_card, second_card, expected",
-    [
-        (
-            Card(Rank.TWO, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            False,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.TWO, Suit.CLUBS),
-            True,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            True,
-        ),
-    ],
-)
-def test_card_greater_equal_operator_returns_correct_result(
-    first_card: Card,
-    second_card: Card,
-    expected: bool,
-):
-    assert (first_card >= second_card) == expected
-
-
-@pytest.mark.parametrize(
-    "first_card, second_card, expected",
-    [
-        (
-            Card(Rank.TWO, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            False,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.TWO, Suit.CLUBS),
-            True,
-        ),
-        (
-            Card(Rank.ACE, Suit.CLUBS),
-            Card(Rank.ACE, Suit.CLUBS),
-            False,
-        ),
-    ],
-)
-def test_card_greater_operator_returns_correct_result(
-    first_card: Card,
-    second_card: Card,
-    expected: bool,
-):
-    assert (first_card > second_card) == expected
+    assert first_card.value > second_card.value
