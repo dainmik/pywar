@@ -4,4 +4,5 @@ pylance
 pylint
 pyproject
 pytest
+repr
 venv
