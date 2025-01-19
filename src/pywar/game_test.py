@@ -1,9 +1,9 @@
 from pywar.card import Card, Rank, Suit
 from pywar.deck import Deck
-from pywar.game import Game, GameConfig, GameResult, GameState, Player
+from pywar.game import Game, GameConfig, Player
 
 
-def test_game_returns_initial_state():
+def test_game_returns_game_runs_to_end_without_throwing_exceptions():
     cards = [Card(rank, suit) for rank in Rank for suit in Suit]
     deck = Deck(cards)
 
@@ -27,13 +27,7 @@ def test_game_returns_initial_state():
 
     game_state = game.start()
 
-    assert game_state == GameState(
-        round_count=1,
-        player_one=player_one,
-        player_two=player_two,
-        logs=[],
-        result=GameResult(state="RUNNING"),
-    )
+    assert game_state.result.state == "FINISHED"
 
 
 def test_get_winner_when_players_have_cards_remaining_should_return_none():
