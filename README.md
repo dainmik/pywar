@@ -4,8 +4,6 @@
 
 PyWar is a CLI ["War" card game](https://en.wikipedia.org/wiki/War_(card_game)) simulator.
 
-The goal is to design the game in a way that is as flexible as possible so that it would be easy to eventually add all the extra features under the "Future ideas" section.
-
 ## 🏆 Features
 
 - [ ] Fully functional game logic for "War" according to the [rules](https://en.wikipedia.org/wiki/War_(card_game)#Rules).
@@ -14,16 +12,10 @@ The goal is to design the game in a way that is as flexible as possible so that 
 
 ## 💡 Feature Ideas
 
-- [ ] Optional variations of the rules (e.g., multiple cards in a "war").
-- [ ] Allow interactive user input so that a person can play against the computer or two players can take turns
-- [ ] Support multiple players
-- [ ] Accept any number of cards
-
 ## 🎮 Requirements
 
 - Card rank (from best to worst):
     - [ ] A K Q J 10 9 8 7 6 5 4 3 2
-    - [ ] Joker (optional)
 
 - [ ] Game uses a standard deck of 52 playing cards.
 - [ ] At the start of the game, initialize the deck in a random order.
