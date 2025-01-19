@@ -17,11 +17,19 @@ disable=
         unused-import,
         # Handled by ruff
         unused-variable,
-        # Overriding an abstract variadic method is semantically correct and should not be complained about. Pylance handles fixed-arity cases correctly.
+        # Overriding an abstract variadic method is semantically correct and should
+        # not be complained about. Pylance handles fixed-arity cases correctly.
         arguments-differ,
         # handled by pylance
         import-error,
-        # Pylance complains when the function has a docstring and a declared return type (Error: ...return type must return value on all code paths "None" is not assignable to...)
+        # A class does not necessarily have to have methods and the proposed pylint's
+        # alternative to use dataclasses may not be a good fit in all situations
+        # (e.g., we may want to have a single-method Protocol). 
+        too-few-public-methods,
+        # Pylance regards a method with a docstring in a protocol as being
+        # implemented and expects the function to return its declared return type.
+        # If we add an ellipsis to tell Pylance that this function is expected to be
+        # implemented in a subclass, pylint complains that the ellipsis is unnecessary
         unnecessary-ellipsis,
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
