@@ -34,6 +34,11 @@ class Card:
         self.rank: Final = rank
         self.suit: Final = suit
 
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Card):
+            return NotImplemented
+        return self.rank == other.rank
+
     def __lt__(self, other: object) -> bool:
         if not isinstance(other, Card):
             return NotImplemented
