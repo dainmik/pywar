@@ -1,5 +1,6 @@
 dataclass
 dataclasses
+isinstance
 pylance
 pylint
 pyproject
