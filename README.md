@@ -15,26 +15,25 @@ PyWar is a CLI ["War" card game](https://en.wikipedia.org/wiki/War_(card_game)) 
 ## 🎮 Requirements
 
 - Card rank (from best to worst):
-    - [ ] A K Q J 10 9 8 7 6 5 4 3 2
+    - [x] A K Q J 10 9 8 7 6 5 4 3 2
 
-- [ ] Game uses a standard deck of 52 playing cards.
+- [x] Game uses a standard deck of 52 playing cards.
 - [ ] At the start of the game, initialize the deck in a random order.
-- [ ] Divide the deck evenly among players. These decks are called ACTIVE decks.
+- [ ] Divide the deck evenly among players.
 
 - Battle phase:
     - [ ] All players reveal the top card of their deck.
-    - [ ] The player with the highest card wins and moves the won cards to their INACTIVE deck.
-        - [ ] Aces are the highest (if Joker is not in play) and suits are ignored.
+    - [ ] The player with the highest card wins and moves the won cards to the bottom of their deck.
+        - [ ] Aces are the highest and suits are ignored.
     - [ ] If the two cards played are of equal value, then there is a War.
 
 - War phase
-    - [ ] All players place the next card from their ACTIVE deck face down.
-    - [ ] And also place one more card from their ACTIVE deck face up.
-    - [ ] The owner of the higher face-up card wins the war and adds all the cards on the table to their INACTIVE deck.
+    - [ ] All players place the next card from their deck face down.
+    - [ ] And also place one more card from their deck face up.
+    - [ ] The owner of the higher face-up card wins the war and adds all the cards on the table to the bottom of their deck.
     - [ ] If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player's face-up card is higher than their opponent's.
 
-- [ ] If a player runs out of ACTIVE cards, shuffle the INACTIVE deck, and this deck becomes ACTIVE.
-- [ ] If a player runs out of ACTIVE cards, and there are no cards in their INACTIVE deck, they lose.
+- [ ] If a player runs out of cards (they don't have enough cards to make the next move), they lose.
 
 ## 💪 Contributing
 
