@@ -1,3 +1,4 @@
+classmethod
 dataclass
 dataclasses
 isinstance

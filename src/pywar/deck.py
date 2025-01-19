@@ -6,7 +6,6 @@ from pywar.card import Card
 
 class Deck:
     def __init__(self, cards: list[Card]) -> None:
-        random.shuffle(cards)
         self._cards = cards
 
     @property
@@ -18,6 +17,9 @@ class Deck:
         decks = Deck(self._cards[:middle_index]), Deck(self._cards[middle_index:])
         self._cards = []
         return decks
+
+    def shuffle(self):
+        self._cards = random.sample(self._cards, len(self._cards))
 
     def add_to_bottom(self, cards: Sequence[Card]):
         self._cards = [*self._cards, *cards]

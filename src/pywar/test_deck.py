@@ -21,6 +21,15 @@ def test_deck_returns_tuple_of_cards():
     assert deck.cards == tuple(cards)
 
 
+def test_deck_shuffle_should_return_cards_in_different_order():
+    cards = [Card(rank, suit) for rank in Rank for suit in Suit]
+
+    deck = Deck(cards)
+    deck.shuffle()
+
+    assert deck.cards != tuple(cards)
+
+
 def test_deck_can_be_split_in_two(deck_with_52_cards: Deck):
     deck_one, deck_two = deck_with_52_cards.split()
 
