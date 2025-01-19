@@ -1,3 +1,4 @@
+import random
 from collections.abc import Sequence
 
 from pywar.card import Card
@@ -5,11 +6,12 @@ from pywar.card import Card
 
 class Deck:
     def __init__(self, cards: list[Card]) -> None:
+        random.shuffle(cards)
         self._cards = cards
 
     @property
     def cards(self):
-        return self._cards.copy()
+        return tuple(self._cards)
 
     def split(self):
         middle_index = len(self._cards) // 2
@@ -21,10 +23,14 @@ class Deck:
         self._cards = [*self._cards, *cards]
 
     def get_card_from_top(self):
-        return self._cards[0]
+        card = self._cards[0]
+        self._cards = self._cards[1:]
+        return card
 
     def get_cards_from_top(self, number: int):
-        return self._cards[0:number]
+        cards = self._cards[0:number]
+        self._cards = self._cards[number:]
+        return cards
 
     def size(self) -> int:
         return len(self._cards)

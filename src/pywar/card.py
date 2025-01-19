@@ -37,3 +37,6 @@ class Card:
     @property
     def value(self):
         return self.rank.value
+
+    def __str__(self):
+        return f"{self.rank.name.capitalize()} of {self.suit.name.capitalize()}"
