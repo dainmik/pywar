@@ -39,5 +39,10 @@ class Card:
             return NotImplemented
         return self.rank.value < other.rank.value
 
+    def __le__(self, other: object) -> bool:
+        if not isinstance(other, Card):
+            return NotImplemented
+        return self.rank.value <= other.rank.value
+
     def __repr__(self) -> str:
         return f"{type(self).__name__}(rank={self.rank}, suit={self.suit})"
