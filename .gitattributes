@@ -1,0 +1,19 @@
+# Auto detect text files and perform LF normalization
+*          text=auto
+
+# Documents
+*.md       text diff=markdown
+*.txt      text
+
+# Graphics
+*.svg      text
+
+# Source files
+*.py     text diff=python
+*.pyi    text diff=python
+
+# Serialization
+*.json     text
+*.toml     text
+*.yaml     text
+*.yml      text
