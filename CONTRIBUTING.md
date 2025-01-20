@@ -55,7 +55,7 @@ By contributing to this project, you acknowledge and agree that your contributio
         ```
     - Install the dependencies:
         ```
-        pip install -e '.[dev]'
+        pip install -r requirements.txt
         ```
 
     5. To test your setup, run the test suite followed by the application:
