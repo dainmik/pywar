@@ -7,6 +7,9 @@ authors = [{ name = "Dainius Mikalajūnas", email = "dainius@mklns.com" }]
 requires-python = ">=3.13"
 dependencies = []
 
+[dependency-groups]
+dev = ["pylint>=3.3.3", "pylint-pytest>=1.1.8", "pytest>=8.2.0", "ruff>=0.9.2"]
+
 [project.scripts]
 pywar = "pywar.main:main"
 
@@ -16,6 +19,3 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 cache-dir = "./.uv_cache"
-
-[dependency-groups]
-dev = ["pylint>=3.3.3", "pylint-pytest>=1.1.8"]

@@ -17,3 +17,6 @@
 *.toml     text
 *.yaml     text
 *.yml      text
+
+# Extra
+uv.lock    text

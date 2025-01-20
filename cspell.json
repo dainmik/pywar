@@ -13,19 +13,29 @@
     ],
     "dictionaryDefinitions": [
         {
+            // Contains words that are use in the project
             "name": "project",
             "path": ".cspell/project.txt",
             "addWords": true,
         },
         {
-            "name": "python",
-            "path": ".cspell/python.txt",
+            // Contains words that are used by Python and external packages
+            "name": "python_extra",
+            "path": ".cspell/python_extra.txt",
+            "addWords": true,
+        },
+        {
+            // Contains words that do not fit in other dictionaries
+            "name": "workspace",
+            "path": ".cspell/workspace.txt",
             "addWords": true,
         }
     ],
     "dictionaries": [
         "python",
+        "python_extra",
         "project",
+        "workspace"
     ],
     "useGitignore": true
 }

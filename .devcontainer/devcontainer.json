@@ -9,6 +9,18 @@
 			"shellautocompletion": true,
 			"version": "latest"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"charliermarsh.ruff",
+				"ms-python.debugpy",
+				"ms-python.python",
+				"ms-python.pylint",
+				"ms-python.vscode-pylance",
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.

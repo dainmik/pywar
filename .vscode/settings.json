@@ -11,8 +11,6 @@
         "python",
         "-m",
         "pylint",
-        "--rcfile",
-        ".pylintrc",
     ],
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.typeCheckingMode": "strict",
