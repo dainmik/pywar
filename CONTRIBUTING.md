@@ -44,13 +44,13 @@ By contributing to this project, you acknowledge and agree that your contributio
         python -m venv .venv
         ```
     - Activate the created virtual environment:
-        ```sh
         # On Linux and macOS.
+        ```sh
         source .venv/bin/activate
         ```
 
-        ```powershell
         # On Windows.
+        ```powershell
         .venv/Scripts/activate
         ```
     - Install the dependencies:
